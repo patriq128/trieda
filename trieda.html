@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naša Trieda❤️❤️</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffe6f2;
+            color: #333;
+        }
+        header {
+            background: linear-gradient(to right, #5bc1e7, #ff99cc);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 5px solid #ff99cc;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        nav button {
+            background-color: #df7f8ce6;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 0 5px;
+            cursor: pointer;
+            border-radius: 20px;
+            transition: background-color 0.3s, transform 0.3s;
+            font-size: 16px;
+        }
+        nav button:hover {
+            background-color: #71cbd7;
+            transform: scale(1.1);
+        }
+        .year-section {
+            display: none;
+            padding: 20px;
+            margin: 10px auto;
+            background-color: #fff;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            max-width: 800px;
+        }
+        .year-section.active {
+            display: block;
+        }
+        .photo-album {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .photo-album img, .photo-album video {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(200, 96, 96, 0.1);
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .photo-album img:hover, .photo-album video:hover {
+            transform: scale(1.1);
+        }
+        .fullscreen-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(2, 3, 3, 0.57);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .fullscreen-overlay img, .fullscreen-overlay video {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+        }
+        .fullscreen-overlay video {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Naša Trieda❤️❤️</h1>
+    </header>
+
+    <nav>
+        <button onclick="showYear(3)">O Nás</button>
+        <button onclick="showYear(5)">5. ročník</button>
+        <button onclick="showYear(6)">6. ročník</button>
+        <button onclick="showYear(7)">7. ročník</button>
+    </nav>
+
+    <div id="year3" class="year-section active">
+        <h1>O Nás</h1>
+        <h3>Členovia Našej Triedy: </h3>
+        <h2>Bibiana Mačaková</h2>
+        <h4>Gabriel Balšaj</h4>
+        <h4>Sofia Banková</h4>
+        <h4>Karina Gdovinová</h4>
+        <h4>Natália Goliášova</h4>
+        <h4>Nela Halušková</h4>
+        <h4>Ján Homulka</h4>
+        <h4>Marek Hudaček</h4>
+        <h4>Petra Hudáčová</h4>
+        <h4>Tobiáš Jackanin</h4>
+        <h4>Ján Jurčišin</h4>
+        <h4>Patrik Kamidra</h4>
+        <h4>Stela Kohútová</h4>
+        <h4>Nela Kolesarová</h4>
+        <h4>Tobias Leder</h4>
+        <h4>Ján Luterančik</h4>
+        <h4>Karolína Mikulová</h4>
+        <h4>Nela Raceková </h4>
+        <h4>Miriam Sabolová</h4>
+        <h4>Sofia Šoltysová</h4>
+        <h4>Stanislava Vavreková</h4>
+        <p>(Spolu je nás 20🙃)</p>
+       
+            <!-- Pridajte viac fotiek podľa potreby -->
+        </div>
+    </div>
+
+    <div id="year5" class="year-section">
+        <h1>5. ročník</h1>
+        <h3>Toto je veta pre piaty ročník.</h3>
+        <div class="photo-album">
+            <img src="c:\Users\PC\Downloads\448094904_975215750927049_6846782952655790158_n.jpg" alt="Foto 1" onclick="showFullscreen(this.src)">
+            <img src="c:\Users\PC\Downloads\448094904_975215750927049_6846782952655790158_n.jpg" alt="Foto 2" onclick="showFullscreen(this.src)">
+            <!-- Pridajte viac fotiek podľa potreby -->
+        </div>
+    </div>
+
+    <div id="year6" class="year-section">
+        <h1>6. ročník</h1>
+        <h3>Toto je veta pre šiesty ročník.</h3>
+        <div class="photo-album">
+            <img src="c:\Users\PC\Downloads\448094904_975215750927049_6846782952655790158_n.jpg" alt="Foto 3" onclick="showFullscreen(this.src)">
+            <img src="c:\Users\PC\Downloads\448094904_975215750927049_6846782952655790158_n.jpg" alt="Foto 4" onclick="showFullscreen(this.src)">
+            <!-- Pridajte viac fotiek podľa potreby -->
+        </div>
+    </div>
+
+    <div id="year7" class="year-section">
+        <h1>7. ročník</h1>
+        <h3>Proste My Všetci.</h3>
+        <div class="photo-album">
+            <img src="d:\7.A ❤️❤️\429473554_927463732176712_1312488048108610161_n.jpg" alt="Foto 5" onclick="showFullscreen(this.src)">
+            <img src="d:\7.A ❤️❤️\448098575_1634722477275071_8781420007376545168_n.jpg" alt="Foto 6" onclick="showFullscreen(this.src)">
+            <img src="d:\7.A ❤️❤️\7.A 001.jpg" alt="Foto 11" onclick="showFullscreen(this.src)">
+            <img src="d:\7.A ❤️❤️\442456560_398260139856042_7199687760670510968_n.jpg" alt="Foto 12" onclick="showFullscreen(this.src)">
+            <img src="d:\7.A ❤️❤️\448104671_1143786776929818_8093479739556625966_n.jpg" alt="Foto 28" onclick="showFullscreen(this.src)">
+            <img src="d:\7.A ❤️❤️\448105936_437625665720825_3875457346883195911_n.jpg" alt="Foto 29" onclick="showFullscreen(this.src)">
+            <img src="d:\7.A ❤️❤️\448404737_857162359632392_5834679318805837835_n.jpg" alt="Foto 30" onclick="showFullscreen(this.src)">
+         <div>
+            <h3>Proste My.</h3>
+        
+            <img src="d:\7.A ❤️❤️\426963793_1469555860573567_4587993023203549954_n.jpg" alt="Foto 13" onclick="showFullscreen(this.src)">
+            <img src="d:\7.A ❤️❤️\427104116_709706151190274_360985966505178025_n.jpg" alt="Foto 14" onclick="showFullscreen(this.src)">
+            <img src="d:\7.A ❤️❤️\436616815_1513984269196406_8506342908712027122_n.jpg" alt="Foto 15" onclick="showFullscreen(this.src)">
+            <img src="d:\7.A ❤️❤️\429066600_2452407594967137_4720610892487195894_n.jpg" alt="Foto 16" onclick="showFullscreen(this.src)">
+            <img src="d:\7.A ❤️❤️\429074003_1089804219004769_2582284653231882830_n.jpg" alt="Foto 17" onclick="showFullscreen(this.src)">
+            <img src="d:\7.A ❤️❤️\429625956_1076797276776738_781988882919379318_n.jpg" alt="Foto 18" onclick="showFullscreen(this.src)">
+            <img src="d:\7.A ❤️❤️\436342372_856955872947921_1098246153810495373_n.jpg" alt="Foto 19" onclick="showFullscreen(this.src)">
+            <img src="d:\7.A ❤️❤️\447886367_850903690185567_2873327790565463026_n.jpg" alt="Foto 20" onclick="showFullscreen(this.src)">
+            <img src="d:\7.A ❤️❤️\448095165_1857997718009563_3749709826474111547_n.jpg" alt="Foto 21" onclick="showFullscreen(this.src)">
+            <img src="d:\7.A ❤️❤️\448184696_3475460912600363_7742357086552933834_n.jpg" alt="Foto 22" onclick="showFullscreen(this.src)">
+            <img src="d:\7.A ❤️❤️\448195028_1013123223553827_7215123482961546692_n.jpg" alt="Foto 23" onclick="showFullscreen(this.src)">
+            <img src="d:\7.A ❤️❤️\448260657_448585357787579_1561921636202376450_n.jpg" alt="Foto 24" onclick="showFullscreen(this.src)">
+            <img src="d:\7.A ❤️❤️\448334652_1688676511943656_6494910034847776899_n.jpg" alt="Foto 25" onclick="showFullscreen(this.src)">
+            <img src="d:\7.A ❤️❤️\448406017_331112636709557_3008390983418344389_n.jpg" alt="Foto 26" onclick="showFullscreen(this.src)">
+            <img src="d:\7.A ❤️❤️\448343415_813324814196543_6244178338654554261_n.jpg" alt="Foto 27" onclick="showFullscreen(this.src)">
+            <img src="d:\7.A ❤️❤️\448348176_1993365137746625_1541169433261086553_n.jpg" alt="Foto 31" onclick="showFullscreen(this.src)">
+            <img src="d:\7.A ❤️❤️\448562762_2009986076066483_8065878309778025125_n.jpg" alt="Foto 32" onclick="showFullscreen(this.src)">
+            <img src="d:\7.A ❤️❤️\448576460_1408757030517466_8104457399127269723_n.jpg" alt="Foto 33" onclick="showFullscreen(this.src)">
+            <img src="d:\7.A ❤️❤️\448577310_2930188783788589_3992190962949581419_n.jpg" alt="Foto 34" onclick="showFullscreen(this.src)">
+            <img src="d:\7.A ❤️❤️\448804407_1502598457303225_8913615016073764618_n.jpg" alt="Foto 35" onclick="showFullscreen(this.src)">
+            <img src="d:\7.A ❤️❤️\Snímka obrazovky 2024-06-20 193045.jpg" alt="Foto 36" onclick="showFullscreen(this.src)">
+            <video src="d:\7.A ❤️❤️\448222249_7983301815060459_5551594967319309894_n.mp4" alt="Video 1" onclick="showFullscreenVideo(this.src)" muted></video>
+            <!-- Pridajte viac fotiek podľa potreby -->
+        </div>
+    </div>
+
+    <div id="year8" class="year-section">
+        <h1>8. ročník</h1>
+        <h3>Toto je veta pre ôsmy ročník.</h3>
+        <div class="photo-album">
+            <img src="photo7.jpg" alt="Foto 7" onclick="showFullscreen(this.src)">
+            <img src="photo8.jpg" alt="Foto 8" onclick="showFullscreen(this.src)">
+            <!-- Pridajte viac fotiek podľa potreby -->
+        </div>
+    </div>
+
+    <div id="year9" class="year-section">
+        <h1>9. ročník</h1>
+        <h3>Toto je veta pre deviaty ročník.</h3>
+        <div class="photo-album">
+            <img src="photo9.jpg" alt="Foto 9" onclick="showFullscreen(this.src)">
+            <img src="photo10.jpg" alt="Foto 10" onclick="showFullscreen(this.src)">
+            <!-- Pridajte viac fotiek podľa potreby -->
+        </div>
+    </div>
+
+    <div id="fullscreenOverlay" class="fullscreen-overlay" onclick="hideFullscreen()">
+        <img id="fullscreenImg" src="" alt="Fullscreen Image">
+        <video id="fullscreenVideo" controls muted></video>
+    </div>
+
+    <script>
+        function showYear(year) {
+            const sections = document.querySelectorAll('.year-section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(`year${year}`).classList.add('active');
+        }
+
+        function showFullscreen(src) {
+            const overlay = document.getElementById('fullscreenOverlay');
+            const img = document.getElementById('fullscreenImg');
+            const video = document.getElementById('fullscreenVideo');
+            video.style.display = 'none';
+            img.style.display = 'block';
+            img.src = src;
+            overlay.style.display = 'flex';
+        }
+
+        function showFullscreenVideo(src) {
+            const overlay = document.getElementById('fullscreenOverlay');
+            const img = document.getElementById('fullscreenImg');
+            const video = document.getElementById('fullscreenVideo');
+            img.style.display = 'none';
+            video.style.display = 'block';
+            video.src = src;
+            overlay.style.display = 'flex';
+        }
+
+        function hideFullscreen() {
+            const overlay = document.getElementById('fullscreenOverlay');
+            const img = document.getElementById('fullscreenImg');
+            const video = document.getElementById('fullscreenVideo');
+            overlay.style.display = 'none';
+            img.src = '';
+            video.src = '';
+        }
+    </script>
+</body>
+</html>
